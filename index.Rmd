@@ -7,6 +7,8 @@ output: html_document
 
 An introduction of the data and a description of the trends/books/items you are choosing to analyze (and why!)
 
+For my project, I'm analyzing the data set with items checked out at least 10 times a month from 2017-20203. The titles that are most checked out, correlating publishers, authors, form of checkout, and subjects are my main variables that I will look at. I want to analyze how the amount of physical checkouts have changed throughout the years, to see whether physical checkouts or digital checkouts are more popular as of 2023, compared to previous years. I also want to analyze which genre/subject of books have been checked out the most throughout the years, to see what types of subjects people are into since world events, protests, and politics have begun to significantly take over the world we live in.
+
 ### Summary Information
 
 Write a summary paragraph of findings that includes the 5 values calculated from your summary information R script
