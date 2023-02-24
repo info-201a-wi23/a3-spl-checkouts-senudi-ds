@@ -2,6 +2,18 @@
 title: "A3: SPL Library Checkouts"
 output: html_document
 ---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE)
+library(dplyr)
+library(ggplot2)
+library(readr)
+library(stringr)
+library_data <- read.csv("~/Desktop/INFO201/2017-2023-10-Checkouts-SPL-Data.csv", stringsAsFactors = FALSE)
+
+source('chart2_example.R')
+source('chart1_example.R')
+```
+
 
 ### Introduction
 
@@ -49,8 +61,8 @@ When we say "clear" or "human readable" titles and labels, that means that you s
 
 Here's an example of how to run an R script inside an RMarkdown file:
 
-``````{r, echo = FALSE, warning = FALSE, code = readLines("chart1_example.R")}
-chart1_example.R
+``````{r, echo = FALSE, warning = FALSE, code = readLines('chart1_example.R')}
+chart1_example
 ```
 
 ### Second Trends Over Time Chart
