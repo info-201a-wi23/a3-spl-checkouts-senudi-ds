@@ -12,90 +12,62 @@ library_data <- read.csv("~/Desktop/INFO201/2017-2023-10-Checkouts-SPL-Data.csv"
 
 source('chart2_example.R')
 source('chart1_example.R')
+source('Chart3.R')
 ```
-
 
 ### Introduction
 
-An introduction of the data and a description of the trends/books/items you are choosing to analyze (and why!)
-
-For my project, I'm analyzing the data set with items checked out at least 10 times a month from 2017-20203. The titles that are most checked out, correlating publishers, authors, form of checkout, and subjects are my main variables that I will look at. I want to analyze how the amount of physical checkouts have changed throughout the years, to see whether physical checkouts or digital checkouts are more popular as of 2023, compared to previous years. I also want to analyze which genre/subject of books have been checked out the most throughout the years, to see what types of subjects people are into since world events, protests, and politics have begun to significantly take over the world we live in.
+For my project, I'm analyzing the data set with items checked out at least 10 times a month from 2017-20203. The authors, forms of checkout, and subjects are my main variables that I will look at. I want to analyze how the amount of physical checkouts have changed throughout the years, to see whether physical checkouts or digital checkouts are more popular as of 2023, compared to previous years. I also want to analyze books about politics, and how their popularity have changed over the years, as protests, and politics have become more prominent especially in social media. I think the influence of social media is quite big especially in today's age and I think it can be proven through my analysis of popular genres, authors, and technology taken from this data. 
 
 ### Summary Information
 
-Write a summary paragraph of findings that includes the 5 values calculated from your summary information R script
+Through this data set I found values of the mean number of books checked out per month digitally and physically to see the impact of technology on book usage. I also found the answers to the questions of what the maximum number of checkouts are for books published in 2023, and what the maximum number of checkouts are for books by Colleen Hoover, an author who I know gained a ton of popularity over the past couple of years. Additionally, I was able to see which year had the highest checkouts, which I think is important to look at considering things like the pandemic, as well as which year had the highest mean checkouts for book related to politics.All of these are interesting to look at as sort of a basis for my charts because it gives me an idea of how many books are being checked out related to what I’m curious about, as well as how and when they’re being checked out.
 
-These will likely be calculated using your DPLYR skills, answering questions such as:
-
-- What is the average number of checkouts for each item?
-- What is the month or year with the most/least checkouts for a book that you're interested in?
-- What is the month or year with the most/least checkouts for ebooks?
-- How has the number of print book checkouts changed over time?
-
-Feel free to calculate and report values that you find relevant.
 
 ### The Dataset
 
 - Who collected/published the data?  
+  
+  The Seattle Public Library
+  
 - What are the parameters of the data (dates, number of checkouts, kinds of books, etc.)?
-- How was the data collected or generated?  
+  
+  The data is checkouts from 2017-2023, and has 12 variables, and 816354 observations. It includes data of titles and authors for physical and electronically checked out books. 
+  
+- How was the data collected or generated?
+  It was collected digitally through a system as books got checked out from the library.  
+  
 - Why was the data collected?  
-- What, if any, ethical questions do you need to consider when working with this data?  
-- What are possible limitations or problems with this data?   (at least 200 words)
+  
+  To see the checkouts throughout the years, and which books have been checked out by month, and either digitally or physically. 
 
+- What, if any, ethical questions do you need to consider when working with this data?
+  
+  Ethically speaking, it's probably important to recognize that people don't know their data is being taken when checking out a book, especially digitally can lead to ethical issues. I also think ethically, we can't use this data to say whether someone actually likes a book without knowing if they read it, but instead it is just to see which books are circulating the most within the library. 
+  
+- What are possible limitations or problems with this data?   (at least 200 words)
+  
+I think we need to consider how big the data set is, and while that sounds like the opposite of limitations, it can actually cause problems when it comes to analyzing the data. I noticed multiple occurrences where authors names will be entered differently so if you try to filter for example, for "Colleen Hoover" it won't calculate some of the data because it was entered in the data set as "Hoover Colleen" , etc. and the same with titles or series of books which can make working with the data a little more difficult. I also think which such raw data like this it can lead to certain miscalculations where the same people may have checked out the same book multiple times, which I feel like can throw off some of the data when it comes to analyzing certain trends. People can also checkout books by accident, and then return them to the library quickly after because they didn’t like it which can also be a potential implication since this data does not show returns. I think for data like this, we need something like a survey to actually see what books people like or find interesting, because just this data won’t definitively tell us likelihood but rather raw data on what is most commonly being checked out, disregarding if it’s actually being read or not. 
 
 ### First Trends Over Time Chart
 
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
-
-The first chart that you will create and include will show the trend over time of your variable/topic/interest. Think carefully about what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
-
-- Show more than one, but fewer than ~10 trends
-  - For example, two books, or 5 different mediums
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear - legend title
-In your .Rmd file, make sure to describe why you included the chart, and what patterns emerged
-
-When we say "clear" or "human readable" titles and labels, that means that you should not just display the variable name.
-
-Here's an example of how to run an R script inside an RMarkdown file:
+For my first chart, I chose to find which book by Colleen Hoover published in which year had the most checkouts. I was interested to analyze data on Colleen Hoover specifically because during and post pandemic she became a trending author, and I saw many of her books all over my social media. I wanted to find out more about when she peaked in popularity, and found that her books published in 2021 had the most checkouts. I think that's accurate to the trends I've seen because her more recently published books are what's been prominent amongst young adult readers. 
 
 ``````{r, echo = FALSE, warning = FALSE, code = readLines('chart1_example.R')}
-chart1_example
 ```
 
 ### Second Trends Over Time Chart
+For my second chart, I analyzed which year had the highest number of checked out books related to politics. I feel like politics have become very prominent in our community as protests are increasing, and people are taking more action towards certain issues so I wanted to see if that reflected in the books people checked out. I found that 2020 actually had the highest number of books checked out relating to politics, which I don't actually find surprising. With the rise of the pandemic, it not only makes sense that more books were probably checked out due to quarantine, but also it was a very divided time for a lot of people in terms of political beliefs and laws put in place surrounding COVID.
 
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
-
-The second chart that you will create and include will show another trend over time of your variable/topic/interest. Think carefully about what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
-
-- Show more than one, but fewer than ~10 trends
-  - For example, two books, or 5 different mediums
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear - legend title
-In your .Rmd file, make sure to describe why you included the chart, and what patterns emerged
-
-When we say "clear" or "human readable" titles and labels, that means that you should not just display the variable name.
-
-Here's an example of how to run an R script inside an RMarkdown file:
 
 ``````{r, echo = FALSE, code = readLines("chart2_example.R")}
 ```
 
 ### Your Choice
 
-The last chart is up to you. It could be a line plot, scatter plot, histogram, bar plot, stacked bar plot, and more. Here are some requirements to help guide your design:
+In my third chart I chose to compare digital checkouts vs physical checkouts. I was initially going to see which type of checkouts are more popular overall, but instead chose to focus on 2023, to see if people are still checking out books physically, or if it has transformed to fully digital checkouts. I grouped by UsageClass, and combined with the maximum checkouts in 2023. I found that checkouts made digitally were nearly double the size of physical checkouts this year. It goes to show the impact of technology and I'm interested to see the ways public libraries begin to develop more innovative forms of checking out books. 
 
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear legend title
-
-Here's an example of how to run an R script inside an RMarkdown file:
-
-``````{r, echo = FALSE, code = readLines("chart2_example.R")}
+``````{r, echo = FALSE, code = readLines("Chart3.R")}
 ```
 
 
